@@ -4,5 +4,5 @@
 import unittest
 
 
-class TestScout Group(unittest.TestCase):
+class TestScoutGroup(unittest.TestCase):
 	pass
