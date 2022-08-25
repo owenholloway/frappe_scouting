@@ -2,20 +2,20 @@
 {% block page_content %}
 
 	{% if member_deleted %}
-		<p>You are not a member of {{ chapter.name }}!</p>
+		<p>You are not a member of {{ scout_group.name }}!</p>
 		<div>
 			<form>
 				<div class="form-group">
-					<label for="leave">Why do you want to leave this chapter</label>
+					<label for="leave">Why do you want to leave this scout_group</label>
 					<input type="text" name="leave" class="form-control" id="leave">
 				</div>
-				<button type="button" class="btn btn-light btn-leave" data-title= "{{ chapter.name }}" id="btn-leave">Submit
+				<button type="button" class="btn btn-light btn-leave" data-title= "{{ scout_group.name }}" id="btn-leave">Submit
 				</button>
 			</form>
 		</div>
-		<p>Please signup and login to join this chapter</p>
+		<p>Please signup and login to join this scout_group</p>
 
-		<p><a href="/non_profit/join-chapter?name={{ chapter.name }}" class='btn btn-primary'>Become Member Again</a></p>
+		<p><a href="/non_profit/join-scout_group?name={{ scout_group.name }}" class='btn btn-primary'>Become Member Again</a></p>
 	{% endif %}
 	<script>
 		frappe.ready(function() {
@@ -24,7 +24,7 @@
 				var user_id = frappe.session.user;
 				var title =  $(this).attr("data-title");
 				frappe.call({
-						method: "non_profit.non_profit.doctype.chapter.chapter.leave",
+						method: "non_profit.non_profit.doctype.scout_group.scout_group.leave",
 						args: {
 							leave_reason: leave,
 							user_id: user_id,

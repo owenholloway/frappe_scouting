@@ -3,6 +3,6 @@ import frappe
 
 def get_context(context):
 	context.no_cache = True
-	chapter = frappe.get_doc('Chapter', frappe.form_dict.name)
+	scout_group = frappe.get_doc('Scout Group', frappe.form_dict.name)
 	context.member_deleted = True
-	context.chapter = chapter
+	context.scout_group = scout_group

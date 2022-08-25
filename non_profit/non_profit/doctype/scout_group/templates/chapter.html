@@ -46,11 +46,11 @@
 	<p>No member yet.</p>
 {% endif %}
 
-<h3>Chapter Head</h3>
+<h3>Scout Group Head</h3>
 <div style="margin-bottom: 30px; max-width: 600px" class="with-border">
 
 <table class="table table-bordered small" style="max-width: 600px;">
-	{% set doc = frappe.get_doc('Member',chapter_head) %}
+	{% set doc = frappe.get_doc('Member',scout_group_head) %}
 	<tr>
 		<td style='width: 15%'>Name</td>
 		<td><b>{{ doc.member_name }}<b></td>
@@ -73,7 +73,7 @@
 </div>
 {% endif %}
 
-<p style="margin: 20px 0 30px;"><a href="/non_profit/join-chapter?name={{ name }}" class='btn btn-primary'>Join this Chapter</a></p>
-<p style="margin: 20px 0 30px;"><a href="/non_profit/leave-chapter?name={{ name }}" class=''>Leave this Chapter</a></p>
+<p style="margin: 20px 0 30px;"><a href="/non_profit/join-scout_group?name={{ name }}" class='btn btn-primary'>Join this Scout Group</a></p>
+<p style="margin: 20px 0 30px;"><a href="/non_profit/leave-scout_group?name={{ name }}" class=''>Leave this Scout Group</a></p>
 
 {% endblock %}

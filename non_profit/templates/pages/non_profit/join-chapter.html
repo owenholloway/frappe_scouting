@@ -2,30 +2,30 @@
 
 {% block page_content %}
 
-{% macro chapter_button() %}
-	<p><a href="/{{ chapter.route }}" class='btn btn-primary'>
-		Go to Chapter Page</a></p>
+{% macro scout_group_button() %}
+	<p><a href="/{{ scout_group.route }}" class='btn btn-primary'>
+		Go to Scout Group Page</a></p>
 {% endmacro %}
 {% if frappe.session.user=='Guest' %}
-	<p>Please signup and login to join this chapter</p>
-	<p><a href="/login?redirect-to=/{{ chapter.route }}" class='btn btn-primary'>Login</a></p>
+	<p>Please signup and login to join this scout_group</p>
+	<p><a href="/login?redirect-to=/{{ scout_group.route }}" class='btn btn-primary'>Login</a></p>
 {% else %}
 	{% if already_member %}
-		<p>You are already a member of {{ chapter.name }}!</p>
-		{{ chapter_button() }}
-		<p><a href="">Leave Chapter</a></p>
+		<p>You are already a member of {{ scout_group.name }}!</p>
+		{{ scout_group_button() }}
+		<p><a href="">Leave Scout Group</a></p>
 	{% else %}
 		{% if request and request.method=='POST' %}
-			<p>Welcome to chapter {{ chapter.name }}!</p>
-			{{ chapter_button() }}
+			<p>Welcome to scout_group {{ scout_group.name }}!</p>
+			{{ scout_group_button() }}
 		{% else %}
 			<div style="padding: 20px 0;">
 				<div class="row">
 					<div class="col-lg-8 col-md-8">
-						<form name="user-intro" action="/non_profit/join-chapter" method='POST'>
+						<form name="user-intro" action="/non_profit/join-scout_group" method='POST'>
 							<div class="form-group">
 								<input name="name" class="hidden form-control" type="text"
-									value="{{chapter.name}}">
+									value="{{scout_group.name}}">
 								<input name="csrf_token" class="hidden  form-control" type="text"
 									value="{{frappe.session.csrf_token}}">
 							</div>

@@ -3,7 +3,7 @@
 		<a href={{ doc.route }}>
 			<h3>{{ doc.name }}</h3>
 			<p>
-				<span class="label"> Chapter Head : {{ frappe.db.get_value('User', chapter_head, 'full_name') }} </span>
+				<span class="label"> Scout Group Head : {{ frappe.db.get_value('User', scout_group_head, 'full_name') }} </span>
 				<span class="label">
 					{% if members %}
 						{% set index = [] %}
